@@ -80,7 +80,7 @@ def get_ignored_files():
 
 
 
-def convert_landmarks(user_name: str | None):
+def convert_landmarks(user_name):
 
     
 
