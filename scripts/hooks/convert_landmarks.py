@@ -58,9 +58,11 @@ def get_ignored_files():
 
     # Send paths to stdin and capture output
 
+    print("\n".join(file_paths))
+
     stdout, stderr = process.communicate(
 
-        input="\n".join(file_paths)#.encode(encoding)
+        input="\n".join(file_paths).encode(encoding)
 
     )
 
