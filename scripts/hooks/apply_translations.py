@@ -66,7 +66,7 @@ def get_ignored_files():
 
 
 
-    if process.returncode != 0:
+    if process.returncode != 0 and len(stderr) > 0:
 
         raise RuntimeError(f"Error: {stderr.decode(encoding)}")
 

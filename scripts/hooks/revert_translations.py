@@ -58,13 +58,12 @@ def get_ignored_files():
 
     stdout, stderr = process.communicate(
 
-        input="\n".join(file_paths)#.encode(encoding)
+        input="\n".join(file_paths).encode(encoding)
 
     )
 
 
-
-    if process.returncode != 0:
+    if process.returncode != 0 and len(stderr) > 0:
 
         raise RuntimeError(f"Error: {stderr.decode(encoding)}")
 
