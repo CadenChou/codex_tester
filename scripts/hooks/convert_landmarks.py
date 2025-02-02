@@ -52,27 +52,23 @@ def get_ignored_files():
 
         stderr=subprocess.PIPE,
 
-        text=True
-
     )
 
 
 
     # Send paths to stdin and capture output
 
-    print("\n".join(file_paths))
-
     stdout, stderr = process.communicate(
 
-        input="\n".join(file_paths)
+        input="\n".join(file_paths).encode(encoding)
 
     )
 
 
 
-    if process.returncode != 0:
+    if process.returncode != 0 and len(stderr) > 0:
 
-        raise RuntimeError(f"Error: {stderr}")
+        raise RuntimeError(f"Error: {stderr.decode(encoding)}")
 
 
 
