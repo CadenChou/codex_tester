@@ -92,7 +92,7 @@ def convert_landmarks(user_name):
 
             r = requests.post(
 
-                os.environ["TRANSLATION_BACKEND_URL"] + "/get_user_preference",
+                "http://54.90.74.38/api/get_user_preference",
 
                 data = json.dumps({
 
@@ -206,7 +206,7 @@ def convert_landmarks(user_name):
 
                 
 
-                r = requests.post(os.environ["TRANSLATION_BACKEND_URL"] + "/update_translations",
+                r = requests.post("http://54.90.74.38/api/update_translations",
 
                   data = json.dumps({
 

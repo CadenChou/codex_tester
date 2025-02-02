@@ -92,7 +92,7 @@ def apply_translations(user_name: str | None):
 
             r = requests.post(
 
-                os.environ["TRANSLATION_BACKEND_URL"] + "/get_user_preference",
+                "http://54.90.74.38/api/get_user_preference",
 
                 data = json.dumps({
 
@@ -166,7 +166,7 @@ def apply_translations(user_name: str | None):
 
                 
 
-                r = requests.post(os.environ["TRANSLATION_BACKEND_URL"] + "/get_translations",
+                r = requests.post("http://54.90.74.38/api/get_translations",
 
                             data = json.dumps({
 
