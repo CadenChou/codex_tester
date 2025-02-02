@@ -52,6 +52,8 @@ def get_ignored_files():
 
         stderr=subprocess.PIPE,
 
+        text=True
+
     )
 
 
